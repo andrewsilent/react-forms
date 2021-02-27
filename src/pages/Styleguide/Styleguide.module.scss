@@ -1,0 +1,33 @@
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  .item7 {
+    width: 360px;
+    min-width: 480px;
+    flex-grow: 2;
+    flex-shrink: 1;
+  }
+  .item5 {
+    width: 360px;
+    min-width: 480px;
+    flex-grow: 1;
+    flex-shrink: 1;
+  }
+}
+
+.margins {
+  margin: 15px 0;
+}
+
+.ul,
+.ol {
+margin-left: 25px;
+}
+
+.ul li {
+  list-style-type: disc;
+}
+
+.ol li {
+  list-style-type: decimal;
+}

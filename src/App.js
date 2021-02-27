@@ -1,23 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import './assets/common/reset.scss';
+import './assets/common/style.scss';
+import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
+import HomePage from './pages/Home';
+import LoginPage from './pages/Login';
+import SignUpPage from './pages/SignUp';
+import Styleguide from './pages/Styleguide';
 
-function App() {
+function App () {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <h1>My webform</h1>
+      <BrowserRouter>
+        <div>
+          <ul>
+            <li>
+              <Link to='/'>Home</Link>
+            </li>
+            <li>
+              <Link to='login'>Login</Link>
+            </li>
+            <li>
+              <Link to='signup'>Sign UP</Link>
+            </li>
+            <li>
+              <Link to='styleguide'>Styleguide</Link>
+            </li>
+          </ul>
+        </div>
+        <Switch>
+          <Route exact path='/' component={HomePage} />
+          <Route path='/login' component={LoginPage} />
+          <Route path='/signup' component={SignUpPage} />
+          <Route path='/styleguide' component={Styleguide} />
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }
