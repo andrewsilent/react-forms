@@ -1,10 +1,10 @@
 import React from 'react';
-import styles from './Home.module.scss';
+import LoginPage from '../LoginPage';
 
 const HomePage = () => {
   return (
     <>
-      <h1>This is Homepage</h1>
+      <LoginPage />
     </>
   );
 };

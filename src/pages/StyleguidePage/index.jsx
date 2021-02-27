@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from './Styleguide.module.scss';
 
-const Styleguide = () => {
+const StyleguidePage = () => {
   return (
     <div className={styles.flex}>
       <div className={styles.item7}>
@@ -33,7 +34,7 @@ const Styleguide = () => {
         </div>
         <div className={styles.margins}>
           <p className={styles.margins}>
-            <b>Bold</b> <i>Italic</i> <a href='#'>Hyperlink</a>
+            <b>Bold</b> <i>Italic</i> <Link to='/'>Hyperlink</Link>
           </p>
         </div>
         <div className={styles.margins}>
@@ -53,4 +54,4 @@ const Styleguide = () => {
   );
 };
 
-export default Styleguide;
+export default StyleguidePage;
