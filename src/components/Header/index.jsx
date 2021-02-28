@@ -1,8 +1,23 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import styles from './Header.module.scss';
 
 const Header = props => {
+  const location = useLocation();
+  const userActionLink = () => {
+    if (location.pathname === '/signup') {
+      return (
+        <Link to='login' className={styles.btnLink}>
+          Login
+        </Link>
+      );
+    }
+    return (
+      <Link to='signup' className={styles.btnLink}>
+        Signup
+      </Link>
+    );
+  };
   return (
     <header className={styles.header}>
       <div className={styles.logoWrapper}>
@@ -10,11 +25,7 @@ const Header = props => {
           andrewsilent
         </Link>
       </div>
-      <div className={styles.btnWrapper}>
-        <Link to='signup' className={styles.btnLink}>
-          Signup
-        </Link>
-      </div>
+      <div className={styles.btnWrapper}>{userActionLink()}</div>
     </header>
   );
 };

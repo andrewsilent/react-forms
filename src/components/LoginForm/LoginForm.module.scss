@@ -1,0 +1,63 @@
+@import '../../assets/common/templates.scss';
+@import '../../assets/common/colors.scss';
+
+.form {
+  padding: 20px;
+  .input,
+  .submit {
+    display: inline-block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 20px 24px;
+    border: 2px solid $white-color;
+    border-radius: 4px;
+  }
+
+  .input {
+    color: $text-color-light;
+  }
+
+  .submit {
+    margin-top: 20px;
+    text-transform: uppercase;
+    color: $white-color;
+    background-color: $accent-color;
+    border-color: $accent-color;
+    font-weight: 600;
+  }
+
+  .input::placeholder {
+    font: 400 1rem/1.25 'Gotham', sans-serif;
+    color: $text-color-grey;
+  }
+
+  .checkboxLabel {
+    font: 400 0.8125rem/1.25 'Gotham', sans-serif;
+    cursor: pointer;
+    text-transform: capitalize;
+  }
+
+  .checkboxLabel input {
+    margin-right: 10px;
+  }
+
+  .link {
+    text-transform: capitalize;
+    font: 400 0.8125rem/1.25 'Gotham', sans-serif;
+    text-decoration: none;
+  }
+
+  .flex {
+    @extend %flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .valid {
+    border-color: $valid-color;
+  }
+
+  .invalid {
+    border-color: $invalid-color;
+  }
+}
