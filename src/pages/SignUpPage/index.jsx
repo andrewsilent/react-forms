@@ -11,9 +11,7 @@ const SignUpPage = () => {
           We always keep your name and email address private.
         </h5>
       </div>
-      <div className={styles.signupForm}>
-        <SignUpForm />
-      </div>
+      <SignUpForm />
     </div>
   );
 };

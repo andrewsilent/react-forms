@@ -1,11 +1,11 @@
 import React from 'react';
 
-const TermsOfService = (props) => {
+const TermsOfService = () => {
   return (
-    <h4>
-      Terms of Service Page
-    </h4>
+    <>
+      <h1>Terms of Service Page</h1>
+    </>
   );
-}
+};
 
 export default TermsOfService;
