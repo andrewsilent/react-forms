@@ -29,7 +29,7 @@ const LoginForm = props => {
             <div className={styles.flex}>
               <label className={styles.label}>
                 <Field
-                  type='email'
+                  type='text'
                   name='email'
                   placeholder='Email address'
                   className={cx(styles.input, {

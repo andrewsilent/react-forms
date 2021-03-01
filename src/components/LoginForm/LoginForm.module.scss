@@ -24,6 +24,9 @@
     background-color: $accent-color;
     border-color: $accent-color;
     font-weight: 600;
+    @media screen and (max-width: 512px) {
+      margin-top: 10px;
+    }
   }
 
   .input::placeholder {
@@ -34,6 +37,11 @@
     font: 400 0.8125rem/1.25 'Gotham', sans-serif;
     cursor: pointer;
     text-transform: capitalize;
+    @media screen and (max-width: 512px) {
+      text-align: center;
+      padding: 5px 0;
+      margin: 5px 0;
+    }
   }
 
   .checkboxLabel input {
@@ -44,12 +52,19 @@
     text-transform: capitalize;
     font: 400 0.8125rem/1.25 'Gotham', sans-serif;
     text-decoration: none;
+    @media screen and (max-width: 512px) {
+      padding: 5px 0;
+      margin: 5px 0;
+    }
   }
 
   .flex {
     @extend %flex;
     justify-content: space-between;
     align-items: center;
+    @media screen and (max-width: 512px) {
+      flex-direction: column;
+    }
   }
 
   .valid {
@@ -63,6 +78,11 @@
   .label {
     position: relative;
     flex-grow: 1;
+
+    @media screen and (max-width: 512px) {
+      width: 100%;
+    }
+
     .errorMessage {
       font: 400 0.85rem/1.25 'Gotham', sans-serif;
       color: $white;
@@ -70,16 +90,18 @@
       position: absolute;
       right: 0;
       top: 100%;
-      margin-top: -5px;
+      width: 100%;
+      margin-top: -8px;
       padding: 6px 24px;
       z-index: 10;
       border-radius: 4px;
       box-shadow: 0 0 25px 5px rgba(0, 0, 0, 0.25);
     }
+
     .errorMessage::before {
       content: '';
       position: absolute;
-      right: 24px;
+      left: 24px;
       top: -12px;
       width: 0;
       height: 0;

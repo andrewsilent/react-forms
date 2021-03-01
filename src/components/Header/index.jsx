@@ -3,8 +3,8 @@ import { Link, useLocation } from 'react-router-dom';
 import styles from './Header.module.scss';
 
 const Header = props => {
-  const location = useLocation();
-  const userActionLink = () => {
+
+  const userActionLink = (location) => {
     if (location.pathname === '/signup') {
       return (
         <Link to='login' className={styles.btnLink}>
@@ -18,6 +18,7 @@ const Header = props => {
       </Link>
     );
   };
+
   return (
     <header className={styles.header}>
       <div className={styles.logoWrapper}>
@@ -25,7 +26,7 @@ const Header = props => {
           andrewsilent
         </Link>
       </div>
-      <div className={styles.btnWrapper}>{userActionLink()}</div>
+      <div className={styles.btnWrapper}>{userActionLink(useLocation())}</div>
     </header>
   );
 };

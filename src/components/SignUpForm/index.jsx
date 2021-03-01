@@ -21,6 +21,7 @@ const SignUpForm = props => {
     console.log('submit accepted');
     formikBag.resetForm();
   };
+
   return (
     <Formik
       initialValues={initialValues}
@@ -28,6 +29,28 @@ const SignUpForm = props => {
       onSubmit={onSubmit}
     >
       {formProps => {
+        const pwdClassNames = formProps => {
+          return cx(styles.input, {
+            [styles.invalid]:
+              formProps.errors.password && formProps.touched.password,
+            [styles.easy]:
+              formProps.errors.password &&
+              formProps.values.password.match(
+                /^(?=.*?[A-Z])|(?=.*?[a-z])|(?=.*?[0-9])|(?=.*?[#?!@$ %^&*-]).{1,}$/
+              ),
+            [styles.medium]:
+              formProps.errors.password &&
+              formProps.values.password.match(
+                /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])|(?=.*?[#?!@$ %^&*-]).{4,}$/
+              ),
+            [styles.valid]:
+              !formProps.errors.password && formProps.touched.password |
+              !formProps.errors.password && formProps.values.password.match(
+                /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])|(?=.*?[#?!@$ %^&*-]).{4,}$/
+              ),
+          });
+        };
+        
         return (
           <Form className={styles.form}>
             <div className={styles.flex}>
@@ -92,7 +115,7 @@ const SignUpForm = props => {
               </label>
               <label className={cx(styles.flexLabel, styles.label)}>
                 <Field
-                  type='email'
+                  type='text'
                   name='email'
                   placeholder='Email address'
                   className={cx(styles.input, {
@@ -115,12 +138,7 @@ const SignUpForm = props => {
                   type='password'
                   name='password'
                   placeholder='Password'
-                  className={cx(styles.input, {
-                    [styles.valid]:
-                      !formProps.errors.password && formProps.touched.password,
-                    [styles.invalid]:
-                      formProps.errors.password && formProps.touched.password,
-                  })}
+                  className={pwdClassNames(formProps)}
                 />
                 <ErrorMessage
                   name='password'

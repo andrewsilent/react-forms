@@ -1,6 +1,9 @@
 .loginContainer {
   max-width: 600px;
   margin: 100px auto 0;
+  @media screen and (max-width: 512px) {
+    margin: 80px auto 0;
+  }
 }
 
 .loginInfo {

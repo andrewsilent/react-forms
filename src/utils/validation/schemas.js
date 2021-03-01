@@ -7,23 +7,14 @@ const NAME_SCHEMA = yup
 
 const EMAIL_SCHEMA = yup
   .string()
-  .email()
+  .matches(/[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/, 'Please enter valid email')
   .required('Email is required');
 
 const PASSWORD_SCHEMA = yup
   .string()
-  .matches(
-    /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])|(?=.*?[#?!@$ %^&*-]).{4,}$/,
-    'Easy password'
-  )
-  .matches(
-    /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{4,}$/,
-    'Medium password'
-  )
-  .matches(
-    /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/,
-    'Hard password'
-  )
+  .matches(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])|(?=.*?[#?!@$ %^&*-]).{4,}$/, 'Easy password')
+  .matches(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{4,}$/, 'Medium password')
+  .matches(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/, 'Hard password')
   .required('Password is required');
 
 const PASSWORD_CONFIRM_SCHEMA = yup
