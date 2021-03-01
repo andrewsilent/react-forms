@@ -1,5 +1,5 @@
-import './assets/common/reset.scss';
-import './assets/common/style.scss';
+import './assets/styles/reset.scss';
+import './assets/styles/style.scss';
 import styles from './App.module.scss';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import HomePage from './pages/HomePage';

@@ -1,4 +1,4 @@
-@import '../../assets/common/colors.scss';
+@import '../../assets/styles/colors.scss';
 
 .header {
   display: flex;
@@ -13,7 +13,7 @@
 
 .logoLink {
   font: 600 1.65rem/1.5 'Gotham', sans-serif;
-  background-color: $bg-color-blue;
+  background-color: $bg-blue;
   border-radius: 10px;
   text-decoration: none;
   position: relative;
@@ -24,7 +24,7 @@
   position: absolute;
   height: 37px;
   width: 55px;
-  border: 3px solid $white-color;
+  border: 3px solid $white;
   border-radius: 50%;
   z-index: -2;
   left: -12px;
@@ -36,7 +36,7 @@
   position: absolute;
   height: 35px;
   width: 59px;
-  border: 4px solid $white-color;
+  border: 4px solid $white;
   border-radius: 50%;
   z-index: -2;
   left: -16px;
@@ -56,5 +56,5 @@
 .logoLink:focus,
 .btnLink:hover,
 .btnLink:focus {
-  color: $white-color;
+  color: $white;
 }

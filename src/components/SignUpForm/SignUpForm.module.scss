@@ -1,5 +1,5 @@
-@import '../../assets/common/templates.scss';
-@import '../../assets/common/colors.scss';
+@import '../../assets/styles/templates.scss';
+@import '../../assets/styles/colors.scss';
 
 .form {
   padding: 20px;
@@ -9,16 +9,16 @@
     width: 100%;
     margin: 10px 0;
     padding: 20px 24px;
-    border: 2px solid $white-color;
+    border: 2px solid $white;
     border-radius: 4px;
   }
 
   .input {
-    color: $text-color-light;
+    color: $text-light;
   }
 
   .submit {
-    color: $white-color;
+    color: $white;
     background-color: $accent-color;
     border-color: $accent-color;
     font-weight: 600;
@@ -44,7 +44,7 @@
 
   .radioLabel {
     font: 400 1.25rem/1.25 'Gotham', sans-serif;
-    border: 1px solid $white-color;
+    border: 1px solid $white;
     padding: 15px;
     margin: 15px 0;
   }
@@ -82,5 +82,33 @@
   .invalid,
   .radioLabel.invalid {
     border-color: $invalid-color;
+  }
+
+  .label {
+    position: relative;
+    .errorMessage {
+      font: 400 0.85rem/1.25 'Gotham', sans-serif;
+      color: $white;
+      background-color: $invalid-color;
+      position: absolute;
+      right: 0;
+      top: 100%;
+      margin-top: -5px;
+      padding: 6px 24px;
+      z-index: 10;
+      border-radius: 4px;
+      box-shadow: 0 0 25px 5px rgba(0, 0, 0, 0.25);
+    }
+    .errorMessage::before {
+      content: '';
+      position: absolute;
+      right: 24px;
+      top: -12px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 18px 12px 18px;
+      border-color: transparent transparent $invalid-color transparent;
+    }
   }
 }

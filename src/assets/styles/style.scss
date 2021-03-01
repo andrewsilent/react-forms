@@ -5,10 +5,15 @@
   box-sizing: border-box;
 }
 
+*::selection {
+  color: $white;
+  background-color: $selection-blue;
+}
+
 body {
   min-height: 100vh;
-  background-color: $bg-color-blue;
-  color: $white-color;
+  background-color: $bg-blue;
+  color: $white;
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -61,12 +66,16 @@ i {
 }
 
 a {
-  color: $white-color;
+  color: $white;
   font: 400 0.95rem/1.25 'Gotham', sans-serif;
   transition: color 0.35s ease 0s;
 }
 
+input, input::placeholder, label {
+  font: 400 0.95rem/1.25 'Gotham', sans-serif;
+}
+
 a:hover,
 a:focus {
-  color: $white-color;
+  color: $white;
 }
